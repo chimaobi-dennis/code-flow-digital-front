@@ -136,6 +136,10 @@
   50% { background-position: 100% 50%; }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @layer components {
   /* Enhanced bubble buttons */
   .btn-gradient {
@@ -228,6 +232,11 @@
     bottom: 20%;
     left: 20%;
     animation-delay: 3s;
+  }
+
+  /* Slide animation */
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
   }
 
   /* Service card hover effects */
