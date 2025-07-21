@@ -1,8 +1,15 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { ProjectModal } from "./ProjectModal";
 
 export const CTA = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
+    <>
     <section className="py-20">
       <div className="container mx-auto px-6">
         <div className="hero-bg rounded-2xl p-12 md:p-16 text-center relative overflow-hidden">
@@ -16,12 +23,19 @@ export const CTA = () => {
               Get a free consultation and project estimate today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button className="btn-gradient text-lg px-8 py-4">
+              <Button 
+                className="btn-gradient text-lg px-8 py-4"
+                onClick={() => setIsModalOpen(true)}
+              >
                 <MessageCircle className="mr-2 w-5 h-5" />
                 Start a Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" className="btn-outline-glow text-lg px-8 py-4">
+              <Button 
+                variant="outline" 
+                className="btn-outline-glow text-lg px-8 py-4"
+                onClick={() => navigate('/portfolio')}
+              >
                 View Portfolio
               </Button>
             </div>
@@ -29,5 +43,8 @@ export const CTA = () => {
         </div>
       </div>
     </section>
+
+    <ProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 };
