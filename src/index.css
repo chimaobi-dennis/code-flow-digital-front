@@ -256,7 +256,7 @@
   /* Testimonial cards with bubble effect */
   .testimonial-card {
     @apply bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-white/50;
-    @apply transition-all duration-600 hover:scale-105 hover:-translate-y-2;
+    @apply transition-all duration-500 hover:scale-105 hover:-translate-y-2;
     box-shadow: 
       0 15px 35px hsl(217 91% 60% / 0.1),
       0 5px 15px hsl(271 91% 65% / 0.1);
