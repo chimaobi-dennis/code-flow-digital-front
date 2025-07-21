@@ -70,7 +70,7 @@ export const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className="card-glow service-card group cursor-pointer relative"
+              className="card-glow group cursor-pointer relative hover:scale-105 transition-all duration-500"
               style={{ 
                 animationDelay: `${index * 200}ms` 
               }}
