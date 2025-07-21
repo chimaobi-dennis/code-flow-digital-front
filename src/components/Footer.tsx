@@ -2,76 +2,76 @@ import { Code, Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-rea
 
 export const Footer = () => {
   return (
-    <footer className="bg-secondary/50 border-t border-border py-16">
+    <footer className="bg-gradient-to-b from-background to-secondary/30 border-t border-border/50 py-20">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-primary-foreground" />
+              <div className="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
+                <Code className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gradient">TechFlow</span>
+              <span className="text-2xl font-bold text-gradient">TechFlow</span>
             </div>
-            <p className="text-muted-foreground">
+            <p className="text-foreground/70 leading-relaxed">
               Transforming digital visions into reality with cutting-edge software solutions.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github className="w-5 h-5" />
+            <div className="flex space-x-5">
+              <a href="#" className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-125">
+                <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-125">
+                <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a href="#" className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-125">
+                <Twitter className="w-6 h-6" />
               </a>
             </div>
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Services</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mobile Apps</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">E-commerce</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Cloud Solutions</a></li>
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold">Services</h3>
+            <ul className="space-y-3 text-foreground/70">
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Web Development</a></li>
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Mobile Apps</a></li>
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">E-commerce</a></li>
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Cloud Solutions</a></li>
             </ul>
           </div>
 
           {/* Company */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Company</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Portfolio</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold">Company</h3>
+            <ul className="space-y-3 text-foreground/70">
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">About Us</a></li>
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Portfolio</a></li>
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Careers</a></li>
+              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Blog</a></li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Contact</h3>
-            <div className="space-y-3 text-muted-foreground">
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold">Contact</h3>
+            <div className="space-y-4 text-foreground/70">
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5 text-primary" />
                 <span>hello@techflow.dev</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-5 h-5 text-primary" />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-5 h-5 text-primary" />
                 <span>San Francisco, CA</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
+        <div className="border-t border-border/50 mt-16 pt-10 text-center text-foreground/60">
           <p>&copy; 2024 TechFlow. All rights reserved.</p>
         </div>
       </div>

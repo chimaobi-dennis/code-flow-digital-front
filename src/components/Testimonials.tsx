@@ -56,11 +56,11 @@ const TESTIMONIALS = [
 export const Testimonials = () => {
   const renderStars = (rating: number) => {
     return (
-      <div className="flex gap-1 mb-4">
+      <div className="flex gap-1 mb-6">
         {[...Array(5)].map((_, i) => (
           <Star 
             key={i} 
-            className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+            className={`w-6 h-6 transition-all duration-300 ${i < rating ? 'text-yellow-400 fill-current scale-110' : 'text-gray-300'}`} 
           />
         ))}
       </div>
@@ -68,36 +68,40 @@ export const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-accent/5">
+    <section className="py-24 bg-gradient-to-b from-secondary/20 to-background relative overflow-hidden">
+      {/* Floating background elements */}
+      <div className="absolute top-20 right-10 w-24 h-24 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-lg animate-bounce"></div>
+      <div className="absolute bottom-32 left-16 w-36 h-36 bg-gradient-to-r from-primary/15 to-accent/15 rounded-full blur-xl animate-pulse"></div>
+      
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="max-w-5xl mx-auto text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">
             What Our Clients
             <span className="text-gradient block">Say About Us</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-foreground/70 leading-relaxed">
             Don't just take our word for it. Here's what our satisfied clients have to say about working with us.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {TESTIMONIALS.map((testimonial) => (
-            <Card key={testimonial.id} className="bg-card/50 border-border/50 hover:border-primary/30 transition-all duration-300 hover:transform hover:scale-105">
-              <CardContent className="p-6">
+            <Card key={testimonial.id} className="testimonial-card group">
+              <CardContent className="p-8">
                 {renderStars(testimonial.rating)}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-foreground/70 mb-8 leading-relaxed text-base">
                   "{testimonial.text}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <Avatar className="w-12 h-12">
+                <div className="flex items-center gap-5">
+                  <Avatar className="w-14 h-14 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
                     <AvatarImage src={testimonial.image} alt={testimonial.name} />
                     <AvatarFallback>
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <h4 className="font-bold text-lg">{testimonial.name}</h4>
+                    <p className="text-sm text-foreground/60">{testimonial.role}</p>
                   </div>
                 </div>
               </CardContent>

@@ -50,50 +50,54 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-24 bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
+      {/* Background Bubbles */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">
             Our <span className="text-gradient">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             From concept to deployment, we provide comprehensive software solutions 
             that help your business thrive in the digital landscape.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className="card-glow group cursor-pointer"
+              className="card-glow service-card group cursor-pointer relative"
               style={{ 
-                animationDelay: `${index * 100}ms` 
+                animationDelay: `${index * 200}ms` 
               }}
             >
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-bold group-hover:text-gradient transition-all duration-300">
+                <CardTitle className="text-2xl font-bold group-hover:text-gradient transition-all duration-500">
                   {service.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-foreground/70 text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-3 mb-8">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
+                    <li key={feature} className="flex items-center text-sm text-foreground/70">
+                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-4" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all duration-300">
+                <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all duration-500">
                   <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
                 </div>
               </CardContent>
             </Card>

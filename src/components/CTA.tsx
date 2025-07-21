@@ -10,30 +10,30 @@ export const CTA = () => {
 
   return (
     <>
-    <section className="py-20">
+    <section className="py-24">
       <div className="container mx-auto px-6">
-        <div className="hero-bg rounded-2xl p-12 md:p-16 text-center relative overflow-hidden">
+        <div className="cta-section rounded-3xl p-16 md:p-20 text-center relative overflow-hidden shadow-2xl">
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">
               Ready to Build Something
               <span className="text-gradient block">Amazing Together?</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-foreground/70 mb-12 leading-relaxed">
               Let's discuss your project and turn your ideas into a digital reality. 
               Get a free consultation and project estimate today.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Button 
-                className="btn-gradient text-lg px-8 py-4"
+                className="btn-gradient text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500"
                 onClick={() => setIsModalOpen(true)}
               >
-                <MessageCircle className="mr-2 w-5 h-5" />
+                <MessageCircle className="mr-3 w-6 h-6" />
                 Start a Project
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
               <Button 
                 variant="outline" 
-                className="btn-outline-glow text-lg px-8 py-4"
+                className="btn-outline-glow text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500"
                 onClick={() => navigate('/portfolio')}
               >
                 View Portfolio
