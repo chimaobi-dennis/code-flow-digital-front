@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react";
+
+interface HeroProps {
+  onCtaClick: () => void;
+}
 const SLIDES = [{
   id: 1,
   badge: "Digital Transformation",
@@ -29,7 +33,7 @@ const SLIDES = [{
   cta: "Lead the Market",
   bgGradient: "from-orange-50 via-amber-50 to-yellow-50"
 }];
-export const Hero = () => {
+export const Hero = ({ onCtaClick }: HeroProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -99,7 +103,7 @@ export const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-              <Button className="btn-gradient text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500">
+              <Button onClick={onCtaClick} className="btn-gradient text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500">
                 {currentSlideData.cta}
                 <ArrowRight className="ml-3 w-6 h-6" />
               </Button>

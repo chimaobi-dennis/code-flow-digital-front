@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Code, Menu } from "lucide-react";
 
-export const Header = () => {
+interface HeaderProps {
+  onGetStartedClick: () => void;
+}
+
+export const Header = ({ onGetStartedClick }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-border/50 shadow-lg">
       <div className="container mx-auto px-6 py-5">
@@ -22,8 +26,8 @@ export const Header = () => {
             <a href="#services" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-110 scroll-smooth">
               Services
             </a>
-            <a href="#portfolio" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-110 scroll-smooth">
-              Portfolio
+            <a href="#testimonials" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-110 scroll-smooth">
+              Testimonials
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-110 scroll-smooth">
               Contact
@@ -32,7 +36,7 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-gradient transform hover:scale-110 transition-all duration-300">
+            <Button onClick={onGetStartedClick} className="btn-gradient transform hover:scale-110 transition-all duration-300">
               Get Started
             </Button>
           </div>
