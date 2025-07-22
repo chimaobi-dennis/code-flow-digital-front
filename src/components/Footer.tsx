@@ -64,10 +64,12 @@ export const Footer = () => {
           {/* Company Info & Contact Details */}
           <div className="space-y-8">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-gradient">TechFlow</span>
+              <img 
+                src="/igs logo.png" 
+                alt="IGSOFT Web Studio" 
+                className="w-10 h-10 object-contain"
+              />
+              <span className="text-2xl font-bold text-gradient">IGSOFT Web Studio</span>
             </div>
             
             <p className="text-foreground/70 leading-relaxed text-lg">
@@ -174,7 +176,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-border/50 mt-16 pt-10 text-center text-foreground/60">
-          <p>&copy; 2024 TechFlow. All rights reserved.</p>
+          <p>&copy; 2024 IGSOFT Web Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>

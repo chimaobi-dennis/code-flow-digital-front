@@ -36,7 +36,7 @@ export const About = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-8">
-              About <span className="text-gradient">TechFlow</span>
+              About <span className="text-gradient">IGSOFT Web Studio</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               We are a forward-thinking software company dedicated to transforming businesses 
@@ -50,7 +50,7 @@ export const About = () => {
             <div>
               <h3 className="text-3xl font-bold mb-6 text-gradient">Our Story</h3>
               <p className="text-foreground/70 mb-6 leading-relaxed">
-                Founded in 2020 by a team of passionate technologists, TechFlow emerged from the vision 
+                Founded in 2020 by a team of passionate technologists, IGSOFT Web Studio emerged from the vision 
                 to bridge the gap between cutting-edge technology and real business needs. We started 
                 with a simple mission: make technology work for people, not the other way around.
               </p>
