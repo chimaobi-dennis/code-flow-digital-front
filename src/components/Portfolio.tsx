@@ -59,5 +59,65 @@ const PROJECTS = [{
 }];
 const CATEGORIES = ["All", "E-Commerce", "Healthcare", "FinTech", "Education", "IoT", "Analytics"];
 export const Portfolio = () => {
-  return;
+  return (
+    <section id="portfolio" className="py-24 bg-muted/20">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Work</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discover our latest projects showcasing innovative solutions and cutting-edge technologies
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROJECTS.map((project) => (
+            <Card key={project.id} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-background/80 backdrop-blur-sm">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden rounded-t-lg">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="secondary" className="bg-background/90 text-foreground">
+                      {project.category}
+                    </Badge>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <Badge key={tech} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <Button size="sm" variant="outline" className="flex-1">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </Button>
+                    <Button size="sm" variant="ghost">
+                      <Github className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from 'emailjs-com';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -77,17 +78,42 @@ export const ProjectModal = ({ isOpen, onClose }: ProjectModalProps) => {
   const onSubmit = async (data: ProjectFormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    toast({
-      title: "Project submitted successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    setIsSubmitting(false);
-    setCurrentStep(1);
-    onClose();
+    try {
+      // Prepare email data
+      const emailData = {
+        to_email: 'igsoftwebstudio@gmail.com',
+        from_name: data.name,
+        from_email: data.email,
+        company: data.company || 'Not specified',
+        project_type: data.projectType,
+        budget: data.budget,
+        timeline: data.timeline,
+        message: data.description,
+        subject: `New Project Inquiry: ${PROJECT_TYPES.find(t => t.value === data.projectType)?.label}`,
+      };
+
+      // For now, we'll just log the data (you'll need to set up EmailJS)
+      console.log('Project data to send:', emailData);
+      
+      // Simulate sending
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      toast({
+        title: "Project submitted successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      handleClose();
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit project. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
