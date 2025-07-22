@@ -3,13 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { ProjectModal } from "./ProjectModal";
-
 export const CTA = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-
-  return (
-    <>
+  return <>
     <section className="py-24">
       <div className="container mx-auto px-6">
         <div className="cta-section rounded-3xl p-16 md:p-20 text-center relative overflow-hidden shadow-2xl">
@@ -23,21 +20,12 @@ export const CTA = () => {
               Get a free consultation and project estimate today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button 
-                className="btn-gradient text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500"
-                onClick={() => setIsModalOpen(true)}
-              >
+              <Button className="btn-gradient text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500" onClick={() => setIsModalOpen(true)}>
                 <MessageCircle className="mr-3 w-6 h-6" />
                 Start a Project
                 <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
-              <Button 
-                variant="outline" 
-                className="btn-outline-glow text-xl px-12 py-6 transform hover:scale-110 transition-all duration-500"
-                onClick={() => navigate('/portfolio')}
-              >
-                View Portfolio
-              </Button>
+              
             </div>
           </div>
         </div>
@@ -45,6 +33,5 @@ export const CTA = () => {
     </section>
 
     <ProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </>
-  );
+    </>;
 };

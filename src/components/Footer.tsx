@@ -1,8 +1,6 @@
 import { Code, Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-gradient-to-b from-background to-secondary/30 border-t border-border/50 py-20">
+  return <footer className="bg-gradient-to-b from-background to-secondary/30 border-t border-border/50 py-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -41,15 +39,7 @@ export const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold">Company</h3>
-            <ul className="space-y-3 text-foreground/70">
-              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">About Us</a></li>
-              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Portfolio</a></li>
-              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Careers</a></li>
-              <li><a href="#" className="hover:text-primary transition-all duration-300 hover:translate-x-1">Blog</a></li>
-            </ul>
-          </div>
+          
 
           {/* Contact */}
           <div className="space-y-6">
@@ -75,6 +65,5 @@ export const Footer = () => {
           <p>&copy; 2024 TechFlow. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
