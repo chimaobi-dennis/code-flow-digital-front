@@ -11,13 +11,12 @@ export const Header = ({ onGetStartedClick }: HeaderProps) => {
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center">
             <img 
               src="/igs logo.png" 
               alt="IGSOFT Web Studio" 
-              className="w-10 h-10 object-contain transform hover:scale-110 transition-all duration-300"
+              className="w-12 h-12 object-contain transform hover:scale-110 transition-all duration-300"
             />
-            <span className="text-2xl font-bold text-gradient">IGSOFT Web Studio</span>
           </div>
 
           {/* Navigation */}

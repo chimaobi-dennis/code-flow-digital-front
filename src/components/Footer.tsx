@@ -63,13 +63,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Company Info & Contact Details */}
           <div className="space-y-8">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center">
               <img 
                 src="/igs logo.png" 
                 alt="IGSOFT Web Studio" 
-                className="w-10 h-10 object-contain"
+                className="w-14 h-14 object-contain"
               />
-              <span className="text-2xl font-bold text-gradient">IGSOFT Web Studio</span>
             </div>
             
             <p className="text-foreground/70 leading-relaxed text-lg">
