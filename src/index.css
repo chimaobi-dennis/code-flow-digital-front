@@ -274,6 +274,19 @@
       rgba(255,255,255,0.95) 100%);
     position: relative;
     overflow: hidden;
+    /* promote to its own compositor layer for smoother bubble animation */
+    transform: translateZ(0);
+  }
+
+  /* Anchor nested panels to the top of the CTA card instead of drifting
+     with the bubble decorations behind them */
+  .cta-section [role="dialog"] {
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 90%;
+    max-width: 22rem;
+    transform: none;
   }
 
   .cta-section::before {

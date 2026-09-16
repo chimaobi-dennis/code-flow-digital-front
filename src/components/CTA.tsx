@@ -28,10 +28,9 @@ export const CTA = () => {
               
             </div>
           </div>
-        </div>
+          <ProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                </div>
       </div>
     </section>
-
-    <ProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>;
 };
